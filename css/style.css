@@ -6,6 +6,7 @@ body {
 div#tabuleiro {
     display: grid;
     justify-content: center;
+    user-select: none;
 }
 
 div.linha {
@@ -25,12 +26,16 @@ div.espacoPreto {
 }
 
 div.pecasPretas {
+    width: 40px;
+    height: 40px;
     border-radius:180% ;
     background-color: black;
     /*background-image: url("../img/pecaPreta.png");*/
 }
 
 div.pecasBrancas {
+    width: 40px;
+    height: 40px;
     border-radius:180%;
     background-color: pink;
     /*background-image: url("../img/pecaBranca.jpg");*/

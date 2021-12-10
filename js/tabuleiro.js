@@ -32,18 +32,30 @@ linha = 0
 for (var i =0; i < numeroCasas; i++) {
     if (linha <= 2) {
         if (i % 2 != 0 && linha % 2 == 0) {
-            document.getElementById('espaco' + i).classList.add('pecasPretas')
+            novaDiv = document.createElement('div')
+            novaDiv.classList.add('pecasPretas')
+            document.getElementById('espaco' + i).innerHTML = ""
+            document.getElementById('espaco' + i).appendChild(novaDiv)
         }
         if (i % 2 == 0 && linha % 2 != 0) {
-            document.getElementById('espaco' + i).classList.add('pecasPretas')
+            novaDiv = document.createElement('div')
+            novaDiv.classList.add('pecasPretas')
+            document.getElementById('espaco' + i).innerHTML = ""
+            document.getElementById('espaco' + i).appendChild(novaDiv)
         }
     }
     if (linha >= 5) {
         if (i % 2 != 0 && linha % 2 == 0) {
-            document.getElementById('espaco' + i).classList.add('pecasBrancas')
+            novaDiv = document.createElement('div')
+            novaDiv.classList.add('pecasBrancas')
+            document.getElementById('espaco' + i).innerHTML = ""
+            document.getElementById('espaco' + i).appendChild(novaDiv)
         }
         if (i % 2 == 0 && linha % 2 != 0) {
-            document.getElementById('espaco' + i).classList.add('pecasBrancas')
+            novaDiv = document.createElement('div')
+            novaDiv.classList.add('pecasBrancas')
+            document.getElementById('espaco' + i).innerHTML = ""
+            document.getElementById('espaco' + i).appendChild(novaDiv)
         }
     }
     if ((i + 1) % 8 == 0) {
