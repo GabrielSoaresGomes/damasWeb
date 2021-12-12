@@ -40,3 +40,7 @@ div.pecasBrancas {
     background-color: pink;
     /*background-image: url("../img/pecaBranca.jpg");*/
 }
+
+.localPossivel {
+    background-color: lime !important;
+}
