@@ -26,21 +26,45 @@ function moverPeca(espacoClicado) {
 }
 
 function finalizarMovimentoDireita(localAnterior) {
-    document.getElementById('espaco'+localAnterior).innerHTML = localAnterior
     var novoLocal = localAnterior + 9
-    let novaDiv = document.createElement('div')
-    novaDiv.classList.add('pecasPretas')
-    novaDiv.setAttribute('onclick', 'moverPeca('+novoLocal+")")
-    document.getElementById('espaco'+novoLocal).innerHTML = ""
-    document.getElementById('espaco'+novoLocal).appendChild(novaDiv)
+    if (verificarMovimento(novoLocal)) {
+        document.getElementById('espaco' + localAnterior).innerHTML = localAnterior
+        document.getElementById('espaco' + (localAnterior + 9)).classList.remove('localPossivel')
+        document.getElementById('espaco' + (localAnterior + 9)).attributes.removeNamedItem('onclick')
+        document.getElementById('espaco' + (localAnterior + 7)).classList.remove('localPossivel')
+        document.getElementById('espaco' + (localAnterior + 7)).attributes.removeNamedItem('onclick')
+
+        let novaDiv = document.createElement('div')
+        novaDiv.classList.add('pecasPretas')
+        novaDiv.setAttribute('onclick', 'moverPeca(' + novoLocal + ")")
+        document.getElementById('espaco' + novoLocal).innerHTML = ""
+        document.getElementById('espaco' + novoLocal).appendChild(novaDiv)
+    }
 }
 
 function finalizarMovimentoEsquerda(localAnterior) {
-    document.getElementById('espaco'+localAnterior).innerHTML = localAnterior
     var novoLocal = localAnterior + 7
-    let novaDiv = document.createElement('div')
-    novaDiv.classList.add('pecasPretas')
-    novaDiv.setAttribute('onclick', 'moverPeca('+novoLocal+")")
-    document.getElementById('espaco'+novoLocal).innerHTML = ""
-    document.getElementById('espaco'+novoLocal).appendChild(novaDiv)
+    if (verificarMovimento(novoLocal)) {
+        document.getElementById('espaco' + localAnterior).innerHTML = localAnterior
+        document.getElementById('espaco' + (localAnterior + 9)).classList.remove('localPossivel')
+        document.getElementById('espaco' + (localAnterior + 9)).attributes.removeNamedItem('onclick')
+        document.getElementById('espaco' + (localAnterior + 7)).classList.remove('localPossivel')
+        document.getElementById('espaco' + (localAnterior + 7)).attributes.removeNamedItem('onclick')
+
+        let novaDiv = document.createElement('div')
+        novaDiv.classList.add('pecasPretas')
+        novaDiv.setAttribute('onclick', 'moverPeca(' + novoLocal + ")")
+        document.getElementById('espaco' + novoLocal).innerHTML = ""
+        document.getElementById('espaco' + novoLocal).appendChild(novaDiv)
+    }
+}
+
+function verificarMovimento(novoLocal) {
+    var novoEspacoFilho = document.getElementById('espaco'+novoLocal).children
+    console.log(novoEspacoFilho.length)
+    if (novoEspacoFilho.length == 0) {
+        console.log("entrou")
+        return true
+    }
+
 }
