@@ -57,6 +57,7 @@ function finalizarMovimentoDireita(localAnterior) { // Caso o movimento da preta
             novaDiv.setAttribute('onclick', 'moverPeca(' + novoLocal + ")")
             document.getElementById('espaco' + novoLocal).innerHTML = ""
             document.getElementById('espaco' + novoLocal).appendChild(novaDiv)
+            turno = "branca"
         }
     }
     if (turno == "branca") {
@@ -74,6 +75,7 @@ function finalizarMovimentoDireita(localAnterior) { // Caso o movimento da preta
             novaDiv.setAttribute('onclick', 'moverPeca(' + novoLocal + ")")
             document.getElementById('espaco' + novoLocal).innerHTML = ""
             document.getElementById('espaco' + novoLocal).appendChild(novaDiv)
+            turno = "preta"
         }
     }
 }
@@ -94,6 +96,7 @@ function finalizarMovimentoEsquerda(localAnterior) { // Caso o movimento da pret
             novaDiv.setAttribute('onclick', 'moverPeca(' + novoLocal + ")")
             document.getElementById('espaco' + novoLocal).innerHTML = ""
             document.getElementById('espaco' + novoLocal).appendChild(novaDiv)
+            turno = "branca"
         }
     }
     if (turno == "branca") {
@@ -111,6 +114,7 @@ function finalizarMovimentoEsquerda(localAnterior) { // Caso o movimento da pret
             novaDiv.setAttribute('onclick', 'moverPeca(' + novoLocal + ")")
             document.getElementById('espaco' + novoLocal).innerHTML = ""
             document.getElementById('espaco' + novoLocal).appendChild(novaDiv)
+            turno = "preta"
         }
     }
 }
