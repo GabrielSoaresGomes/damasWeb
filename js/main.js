@@ -60,7 +60,7 @@ function finalizarMovimentoDireita(localAnterior) { // Caso o movimento da preta
             turno = "branca"
         }
     }
-    if (turno == "branca") {
+    else if (turno == "branca") {
         var novoLocal = localAnterior - 7 //
 
         //Executa a função de verificar movimento e só roda o if se o retorno for true
@@ -77,6 +77,11 @@ function finalizarMovimentoDireita(localAnterior) { // Caso o movimento da preta
             document.getElementById('espaco' + novoLocal).appendChild(novaDiv)
             turno = "preta"
         }
+    }
+    if (turno == "branca") {
+        document.getElementById('turno').innerHTML = "Turno das Brancas"
+    }else {
+        document.getElementById('turno').innerHTML = "Turno das Pretas"
     }
 }
 
@@ -99,7 +104,7 @@ function finalizarMovimentoEsquerda(localAnterior) { // Caso o movimento da pret
             turno = "branca"
         }
     }
-    if (turno == "branca") {
+    else if (turno == "branca") {
         var novoLocal = localAnterior - 9  //
 
         //Executa a função de verificar movimento e só roda o if se o retorno for true
@@ -116,6 +121,11 @@ function finalizarMovimentoEsquerda(localAnterior) { // Caso o movimento da pret
             document.getElementById('espaco' + novoLocal).appendChild(novaDiv)
             turno = "preta"
         }
+    }
+    if (turno == "branca") {
+        document.getElementById('turno').innerHTML = "Turno das Brancas"
+    }else {
+        document.getElementById('turno').innerHTML = "Turno das Pretas"
     }
 }
 
@@ -150,12 +160,12 @@ function limparQuadradosAnterior(localAnterior, turno) {
             document.getElementById('espaco' + (localAnterior + 7)).attributes.removeNamedItem('onclick')
         }
     }
-    if (turno == "branca") {
+    else if (turno == "branca") {
         //Essa linha de baixo faz com que o quadrado onde a peça branca estava, receba o seu número novamente
         document.getElementById('espaco' + localAnterior).innerHTML = localAnterior
         //Remove a class que deixava verde do outro espaço que podia ser clicado
-        document.getElementById('espaco' + (localAnterior - 7)).classList.remove('localPossivel')
         document.getElementById('espaco' + (localAnterior - 9)).classList.remove('localPossivel')
+        document.getElementById('espaco' + (localAnterior - 7)).classList.remove('localPossivel')
         var atributosAnterior = document.getElementById('espaco' + (localAnterior - 7)).attributes
         if (atributosAnterior.onclick) {
             document.getElementById('espaco' + (localAnterior - 7)).attributes.removeNamedItem('onclick')

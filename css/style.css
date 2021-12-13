@@ -3,6 +3,14 @@ body {
     background-color: darkslategray;
 }
 
+h2.turnoBranca {
+    color: white;
+}
+
+h2.turnoPreta {
+    color: black;
+}
+
 div#tabuleiro {
     display: grid;
     justify-content: center;
